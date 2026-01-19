@@ -1,0 +1,81 @@
+system:
+  webPort: 80
+  httpsPort: 443
+  logLevel: debug
+isp:
+  antiFlicker: disabled
+  iqServer: false
+  sensorConfig: /etc/sensors/imx335.bin
+image:
+  mirror: false
+  flip: false
+  rotate: 0
+  contrast: 21
+  hue: 50
+  saturation: 50
+  luminance: 50
+video0:
+  enabled: true
+  codec: h264
+  fps: 30
+  bitrate: 4096
+  rcMode: cbr
+  gopSize: 0.05
+  profile: high
+  size: 1920x1080 
+  sliceUnits: 0
+video1:
+  enabled: false
+  codec: h264
+  size: 704x576
+  fps: 15
+jpeg:
+  enabled: false
+  qfactor: 100
+  fps: 20
+  rtsp: false
+  size: 1920x1080
+osd:
+  enabled: false
+  font: /usr/share/fonts/truetype/UbuntuMono-Regular.ttf
+  template: '+'
+  posX: 0
+  posY: 0
+  size: 10.0
+audio:
+  enabled: false
+  volume: 30
+  srate: 8000
+  codec: opus
+  outputEnabled: false
+  outputVolume: 30
+rtsp:
+  enabled: true
+  port: 554
+nightMode:
+  colorToGray: true
+  irCutSingleInvert: false
+  lightMonitor: false
+  lightSensorInvert: false
+  irCutPin1: 23
+  monitorDelay: 0
+  irCutPin2: 24
+motionDetect:
+  enabled: false
+  visualize: false
+  debug: false
+records:
+  enabled: false
+  path: /mnt/mmcblk0p1/%F
+  split: 20
+  maxUsage: 95
+outgoing:
+  enabled: true
+  server: udp://192.168.1.20:5600
+  naluSize: 1200
+  substream: false
+watchdog:
+  enabled: true
+  timeout: 300
+hls:
+  enabled: false
